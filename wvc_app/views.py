@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
+<<<<<<< HEAD
 from django.shortcuts import render
 from django.views.generic.base import View, HttpResponseRedirect, HttpResponse
 from .forms import LoginForm, RegisterForm, NewVideoForm, CommentForm, ChannelForm
@@ -252,3 +253,30 @@ class NewVideo(View):
             return HttpResponseRedirect('/video/{}'.format(new_video.id))
         else:
             return HttpResponse('Your form is not valid. Go back and try again.')
+=======
+
+
+
+
+def home(request):
+
+    '''
+    View home function that returns the home page
+    '''
+  
+    voice_card = VoiceCard.objects.all()
+    print(voice_card)
+
+    apartments = Listing.objects.filter(category__contains="apartments").all()
+    print(apartments)
+
+    mansionattes = Listing.objects.filter(category__contains="mansionattes").all()
+    print(mansionattes)
+
+    bungalows = Listing.objects.filter(category__contains="bungalows").all()
+    print(bungalows)
+    
+
+    
+    return render(request, 'home.html', {"listings":listings, "apartments": apartments,"mansionattes":mansionattes,"bungalows":bungalows})
+>>>>>>> 92b4cd68e104861e4b4857f6cb132c1658c9a414

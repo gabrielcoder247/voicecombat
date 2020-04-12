@@ -32,6 +32,7 @@ from wvc_app.views import HomeView, NewVideo, CommentView, LoginView, RegisterVi
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('', HomeView.as_view()),
     path('login', LoginView.as_view()),
     path('register', RegisterView.as_view()),
@@ -42,6 +43,9 @@ urlpatterns = [
     path('logout', LogoutView.as_view()),
     path('createchannel', CreateChannelView.as_view()),
     path('<user>/channel', ChannelView.as_view())
+=======
+    # path(r' ',include('wvc_app.urls'))
+>>>>>>> 92b4cd68e104861e4b4857f6cb132c1658c9a414
 ]
 
 
